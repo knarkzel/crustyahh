@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>nmap</title>
+        <title>smbclient</title>
                 
 
         <!-- Custom HTML head -->
@@ -14,21 +14,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
         
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
         
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -36,7 +36,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="crustyahh.html">crustyahh</a></li><li class="chapter-item expanded affix "><a href="resources.html">Resources</a></li><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html" class="active"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="enum4linux.html"><strong aria-hidden="true">3.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="gobuster.html"><strong aria-hidden="true">4.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="smbclient.html"><strong aria-hidden="true">5.</strong> smbclient</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../crustyahh.html">crustyahh</a></li><li class="chapter-item expanded affix "><a href="../resources.html">Resources</a></li><li class="chapter-item expanded affix "><a href="../cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="../cracking/nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="../cracking/hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="../cracking/enum4linux.html"><strong aria-hidden="true">3.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="../cracking/gobuster.html"><strong aria-hidden="true">4.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="../cracking/smbclient.html" class="active"><strong aria-hidden="true">5.</strong> smbclient</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -114,7 +114,7 @@
                     <h1 class="menu-title"></h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                                                                         
@@ -143,45 +143,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="nmap"><a class="header" href="#nmap">nmap</a></h1>
-<p>Network exploration tool and security / port scanner.
-Some features only activate when Nmap is run with privileges.
-More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
-<p>Check if an IP address is up, and guess the remote host's operating system:</p>
-<pre><code>  nmap -O ip_or_hostname
+                        <h1 id="smbclient"><a class="header" href="#smbclient">smbclient</a></h1>
+<p>FTP-like client to access SMB/CIFS resources on servers.</p>
+<p>Connect to a share (user will be prompted for password; <code>exit</code> to quit the session):</p>
+<pre><code>  smbclient //server/share
 </code></pre>
-<p>Try to determine whether the specified hosts are up and what their names are:</p>
-<pre><code>  nmap -sn ip_or_hostname optional_another_address
+<p>Connect with a different username:</p>
+<pre><code>  smbclient //server/share --user username
 </code></pre>
-<p>Like above, but also run a default 1000-port TCP scan if host seems up:</p>
-<pre><code>  nmap ip_or_hostname optional_another_address
+<p>Connect with a different workgroup:</p>
+<pre><code>  smbclient //server/share --workgroup domain --user username
 </code></pre>
-<p>Also enable scripts, service detection, OS fingerprinting and traceroute:</p>
-<pre><code>  nmap -A address_or_addresses
+<p>Connect with a username and password:</p>
+<pre><code>  smbclient //server/share --user username%password
 </code></pre>
-<p>Assume good network connection and speed up execution:</p>
-<pre><code>  nmap -T4 address_or_addresses
+<p>Download a file from the server:</p>
+<pre><code>  smbclient //server/share --directory path/to/directory --command &quot;get file.txt&quot;
 </code></pre>
-<p>Scan a specific list of ports (use <code>-p-</code> for all ports <code>1-65535</code>):</p>
-<pre><code>  nmap -p port1,port2,…,portN address_or_addresses
+<p>Upload a file to the server:</p>
+<pre><code>  smbclient //server/share --directory path/to/directory --command &quot;put file.txt&quot;
 </code></pre>
-<p>Perform TCP and UDP scanning (use <code>-sU</code> for UDP only, <code>-sZ</code> for SCTP, <code>-sO</code> for IP):</p>
-<pre><code>  nmap -sSU address_or_addresses
-</code></pre>
-<p>Perform full port, service, version detection scan with all default NSE scripts active against a host to determine weaknesses and info:</p>
-<pre><code>  nmap -sC -sV address_or_addresses</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="cracking.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="../cracking/gobuster.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="hydra.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -189,13 +179,10 @@ More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="cracking.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="../cracking/gobuster.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="hydra.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                             </nav>
 
         </div>
@@ -208,13 +195,13 @@ More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
         </script>
         
         
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
