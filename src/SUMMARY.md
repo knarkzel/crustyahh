@@ -1,4 +1,6 @@
 # Summary
 
-- [Tools](./tools.md)
+# Cracking
+ - [nmap](./nmap.md)
+ - [hydra](./hydra.md)
 
