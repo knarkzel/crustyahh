@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Tools</title>
+        <title>nmap</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">1.</strong> Tools</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Cracking</li><li class="chapter-item expanded "><a href="nmap.html" class="active"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -143,14 +143,43 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="tools"><a class="header" href="#tools">TOOLS</a></h1>
-<p>Tools</p>
+                        <h1 id="nmap"><a class="header" href="#nmap">nmap</a></h1>
+<p>Network exploration tool and security / port scanner.
+Some features only activate when Nmap is run with privileges.
+More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
+<p>Check if an IP address is up, and guess the remote host's operating system:</p>
+<pre><code>  nmap -O ip_or_hostname
+</code></pre>
+<p>Try to determine whether the specified hosts are up and what their names are:</p>
+<pre><code>  nmap -sn ip_or_hostname optional_another_address
+</code></pre>
+<p>Like above, but also run a default 1000-port TCP scan if host seems up:</p>
+<pre><code>  nmap ip_or_hostname optional_another_address
+</code></pre>
+<p>Also enable scripts, service detection, OS fingerprinting and traceroute:</p>
+<pre><code>  nmap -A address_or_addresses
+</code></pre>
+<p>Assume good network connection and speed up execution:</p>
+<pre><code>  nmap -T4 address_or_addresses
+</code></pre>
+<p>Scan a specific list of ports (use <code>-p-</code> for all ports <code>1-65535</code>):</p>
+<pre><code>  nmap -p port1,port2,…,portN address_or_addresses
+</code></pre>
+<p>Perform TCP and UDP scanning (use <code>-sU</code> for UDP only, <code>-sZ</code> for SCTP, <code>-sO</code> for IP):</p>
+<pre><code>  nmap -sSU address_or_addresses
+</code></pre>
+<p>Perform full port, service, version detection scan with all default NSE scripts active against a host to determine weaknesses and info:</p>
+<pre><code>  nmap -sC -sV address_or_addresses
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                                                    <a rel="next" href="hydra.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -159,6 +188,9 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                                    <a rel="next" href="hydra.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                             </nav>
 
         </div>

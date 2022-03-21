@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">1.</strong> Tools</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Cracking</li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -144,8 +144,62 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="tools"><a class="header" href="#tools">TOOLS</a></h1>
-<p>Tools</p>
+                        <div style="break-before: page; page-break-before: always;"></div><h1 id="nmap"><a class="header" href="#nmap">nmap</a></h1>
+<p>Network exploration tool and security / port scanner.
+Some features only activate when Nmap is run with privileges.
+More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
+<p>Check if an IP address is up, and guess the remote host's operating system:</p>
+<pre><code>  nmap -O ip_or_hostname
+</code></pre>
+<p>Try to determine whether the specified hosts are up and what their names are:</p>
+<pre><code>  nmap -sn ip_or_hostname optional_another_address
+</code></pre>
+<p>Like above, but also run a default 1000-port TCP scan if host seems up:</p>
+<pre><code>  nmap ip_or_hostname optional_another_address
+</code></pre>
+<p>Also enable scripts, service detection, OS fingerprinting and traceroute:</p>
+<pre><code>  nmap -A address_or_addresses
+</code></pre>
+<p>Assume good network connection and speed up execution:</p>
+<pre><code>  nmap -T4 address_or_addresses
+</code></pre>
+<p>Scan a specific list of ports (use <code>-p-</code> for all ports <code>1-65535</code>):</p>
+<pre><code>  nmap -p port1,port2,…,portN address_or_addresses
+</code></pre>
+<p>Perform TCP and UDP scanning (use <code>-sU</code> for UDP only, <code>-sZ</code> for SCTP, <code>-sO</code> for IP):</p>
+<pre><code>  nmap -sSU address_or_addresses
+</code></pre>
+<p>Perform full port, service, version detection scan with all default NSE scripts active against a host to determine weaknesses and info:</p>
+<pre><code>  nmap -sC -sV address_or_addresses
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hydra"><a class="header" href="#hydra">hydra</a></h1>
+<p>Online password guessing tool.
+Protocols supported include FTP, HTTP(S), SMTP, SNMP, XMPP, SSH, and more.
+More information: <a href="https://github.com/vanhauser-thc/thc-hydra">https://github.com/vanhauser-thc/thc-hydra</a>.</p>
+<p>Start Hydra's wizard:</p>
+<pre><code>  hydra-wizard
+</code></pre>
+<p>Guess SSH credentials using a given username and a list of passwords:</p>
+<pre><code>  hydra -l username -P path/to/wordlist.txt host_ip ssh
+</code></pre>
+<p>Guess Telnet credentials using a list of usernames and a single password, specifying a non-standard port and IPv6:</p>
+<pre><code>  hydra -L path/to/usernames.txt -p password -s port -6 host_ip telnet
+</code></pre>
+<p>Guess FTP credentials using usernames and passwords lists, specifying the number of threads:</p>
+<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -t n_tasks host_ip ftp
+</code></pre>
+<p>Guess MySQL credentials using a username and a passwords list, exiting when a username/password pair is found:</p>
+<pre><code>  hydra -l username -P path/to/wordlist.txt -f host_ip mysql
+</code></pre>
+<p>Guess RDP credentials using a username and a passwords list, showing each attempt:</p>
+<pre><code>  hydra -l username -P path/to/wordlist.txt -V rdp://host_ip
+</code></pre>
+<p>Guess IMAP credentials on a range of hosts using a list of colon-separated username/password pairs:</p>
+<pre><code>  hydra -C path/to/username_password_pairs.txt imap://[host_range_cidr]
+</code></pre>
+<p>Guess POP3 credentials on a list of hosts using usernames and passwords lists, exiting when a username/password pair is found:</p>
+<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3
+</code></pre>
 
                     </main>
 
