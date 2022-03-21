@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Uselful_resources</title>
+        <title>gobuster</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pages.html">Uselful_resources</a></li><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="enum4linux.html"><strong aria-hidden="true">3.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="gobuster.html"><strong aria-hidden="true">4.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="smbclient.html"><strong aria-hidden="true">5.</strong> smbclient</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pages.html">Uselful_resources</a></li><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="enum4linux.html"><strong aria-hidden="true">3.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="gobuster.html" class="active"><strong aria-hidden="true">4.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="smbclient.html"><strong aria-hidden="true">5.</strong> smbclient</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -143,15 +143,37 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="useful-resources--tools"><a class="header" href="#useful-resources--tools">Useful resources / tools</a></h1>
-<p>https://gchq.github.io/CyberChef/</p>
+                        <h1 id="gobuster"><a class="header" href="#gobuster">gobuster</a></h1>
+<p>Brute-forces hidden paths on web servers and more.
+More information: <a href="https://github.com/OJ/gobuster">https://github.com/OJ/gobuster</a>.</p>
+<p>Discover directories and files that match in the wordlist:</p>
+<pre><code>  gobuster dir --url https://example.com/ --wordlist path/to/file
+</code></pre>
+<p>Discover subdomains:</p>
+<pre><code>  gobuster dns --domain example.com --wordlist path/to/file
+</code></pre>
+<p>Discover Amazon S3 buckets:</p>
+<pre><code>  gobuster s3 --wordlist path/to/file
+</code></pre>
+<p>Discover other virtual hosts on the server:</p>
+<pre><code>  gobuster vhost --url https://example.com/ --wordlist path/to/file
+</code></pre>
+<p>Fuzz the value of a parameter:</p>
+<pre><code>  gobuster fuzz --url https://example.com/?parameter=FUZZ --wordlist path/to/file
+</code></pre>
+<p>Fuzz the name of a parameter:</p>
+<pre><code>  gobuster fuzz --url https://example.com/?FUZZ=value --wordlist path/to/file
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="enum4linux.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         
-                                                    <a rel="next" href="cracking.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="smbclient.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -161,8 +183,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="enum4linux.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                                    <a rel="next" href="cracking.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="smbclient.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
