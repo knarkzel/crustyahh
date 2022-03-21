@@ -7,7 +7,8 @@
 # Guides 
 
 - [php-reverse-shell](guides/php-reverse-shell.md)
-- [linenum](guides/linenum.md)
+- [LinEnum](guides/linenum.md)
+- [SUID](guides/suid.md)
 
 # Cracking
 
