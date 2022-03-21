@@ -1,3 +1,3 @@
-# Useful resources / tools
+# Resources
 
 - [CyberChef](https://gchq.github.io/CyberChef/)

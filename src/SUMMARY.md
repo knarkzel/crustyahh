@@ -1,10 +1,12 @@
 # Summary
 
-- [Useful resources](./pages.md)
+[crustyahh](./crustyahh.md)
 
-- [Cracking](./cracking.md)
-  - [nmap](./nmap.md)
-  - [hydra](./hydra.md)
-  - [enum4linux](./enum4linux.md)
-  - [gobuster](./gobuster.md)
-  - [smbclient](./smbclient.md)
+[Resources](./resources.md)
+
+[Cracking](./cracking.md)
+- [nmap](./nmap.md)
+- [hydra](./hydra.md)
+- [enum4linux](./enum4linux.md)
+- [gobuster](./gobuster.md)
+- [smbclient](./smbclient.md)
