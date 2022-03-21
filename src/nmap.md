@@ -1,5 +1,4 @@
-
-  # nmap
+# nmap    
   
   Network exploration tool and security / port scanner.
   Some features only activate when Nmap is run with privileges.
@@ -36,4 +35,3 @@
   Perform full port, service, version detection scan with all default NSE scripts active against a host to determine weaknesses and info:
 
       nmap -sC -sV address_or_addresses
-

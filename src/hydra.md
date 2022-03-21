@@ -1,6 +1,5 @@
 # hydra
 
-
   Online password guessing tool.
   Protocols supported include FTP, HTTP(S), SMTP, SNMP, XMPP, SSH, and more.
   More information: <https://github.com/vanhauser-thc/thc-hydra>.
@@ -36,5 +35,3 @@
   Guess POP3 credentials on a list of hosts using usernames and passwords lists, exiting when a username/password pair is found:
 
       hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3
-
-
