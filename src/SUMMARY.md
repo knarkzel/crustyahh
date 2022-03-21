@@ -16,3 +16,8 @@
 - [enum4linux](cracking/enum4linux.md)
 - [gobuster](cracking/gobuster.md)
 - [smbclient](cracking/smbclient.md)
+
+
+# dev
+
+- [note](todo.md)

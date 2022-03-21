@@ -1,0 +1,4 @@
+# wtite
+
+getops
+sudo -l
