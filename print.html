@@ -4,36 +4,29 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title></title>
-                <meta name="robots" content="noindex" />
-                
-
+        <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
-        
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
-        
+        <link rel="stylesheet" href="css/print.css" media="print">
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
-        
+        <link rel="stylesheet" href="fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-            </head>
+    </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
@@ -83,14 +76,14 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="crustyahh.html">crustyahh</a></li><li class="chapter-item expanded affix "><a href="resources.html">Resources</a></li><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="cracking/nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="cracking/hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="cracking/enum4linux.html"><strong aria-hidden="true">3.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="cracking/gobuster.html"><strong aria-hidden="true">4.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="cracking/smbclient.html"><strong aria-hidden="true">5.</strong> smbclient</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="crustyahh.html">crustyahh</a></li><li class="chapter-item expanded affix "><a href="resources.html">Resources</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded affix "><li class="part-title">Cracking</li></ol>
+            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -107,22 +100,21 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                                            </div>
+                    </div>
 
                     <h1 class="menu-title"></h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                                                                        
                     </div>
                 </div>
 
-                                <div id="search-wrapper" class="hidden">
+                <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
                         <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
@@ -132,7 +124,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -151,164 +142,36 @@
 <ul>
 <li><a href="https://gchq.github.io/CyberChef/">CyberChef</a></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="cracking"><a class="header" href="#cracking">Cracking</a></h1>
-<p>Here are some tools for cracking.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="nmap"><a class="header" href="#nmap">nmap</a></h1>
-<p>Network exploration tool and security / port scanner.
-Some features only activate when Nmap is run with privileges.
-More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
-<p>Check if an IP address is up, and guess the remote host's operating system:</p>
-<pre><code>  nmap -O ip_or_hostname
-</code></pre>
-<p>Try to determine whether the specified hosts are up and what their names are:</p>
-<pre><code>  nmap -sn ip_or_hostname optional_another_address
-</code></pre>
-<p>Like above, but also run a default 1000-port TCP scan if host seems up:</p>
-<pre><code>  nmap ip_or_hostname optional_another_address
-</code></pre>
-<p>Also enable scripts, service detection, OS fingerprinting and traceroute:</p>
-<pre><code>  nmap -A address_or_addresses
-</code></pre>
-<p>Assume good network connection and speed up execution:</p>
-<pre><code>  nmap -T4 address_or_addresses
-</code></pre>
-<p>Scan a specific list of ports (use <code>-p-</code> for all ports <code>1-65535</code>):</p>
-<pre><code>  nmap -p port1,port2,…,portN address_or_addresses
-</code></pre>
-<p>Perform TCP and UDP scanning (use <code>-sU</code> for UDP only, <code>-sZ</code> for SCTP, <code>-sO</code> for IP):</p>
-<pre><code>  nmap -sSU address_or_addresses
-</code></pre>
-<p>Perform full port, service, version detection scan with all default NSE scripts active against a host to determine weaknesses and info:</p>
-<pre><code>  nmap -sC -sV address_or_addresses</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="hydra"><a class="header" href="#hydra">hydra</a></h1>
-<p>Bruteforce tool
-Online password guessing tool.
-Protocols supported include FTP, HTTP(S), SMTP, SNMP, XMPP, SSH, and more.
-More information: <a href="https://github.com/vanhauser-thc/thc-hydra">https://github.com/vanhauser-thc/thc-hydra</a>.</p>
-<p>Start Hydra's wizard:</p>
-<pre><code>  hydra-wizard
-</code></pre>
-<p>Guess SSH credentials using a given username and a list of passwords:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt host_ip ssh
-</code></pre>
-<p>Guess Telnet credentials using a list of usernames and a single password, specifying a non-standard port and IPv6:</p>
-<pre><code>  hydra -L path/to/usernames.txt -p password -s port -6 host_ip telnet
-</code></pre>
-<p>Guess FTP credentials using usernames and passwords lists, specifying the number of threads:</p>
-<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -t n_tasks host_ip ftp
-</code></pre>
-<p>Guess MySQL credentials using a username and a passwords list, exiting when a username/password pair is found:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt -f host_ip mysql
-</code></pre>
-<p>Guess RDP credentials using a username and a passwords list, showing each attempt:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt -V rdp://host_ip
-</code></pre>
-<p>Guess IMAP credentials on a range of hosts using a list of colon-separated username/password pairs:</p>
-<pre><code>  hydra -C path/to/username_password_pairs.txt imap://[host_range_cidr]
-</code></pre>
-<p>Guess POP3 credentials on a list of hosts using usernames and passwords lists, exiting when a username/password pair is found:</p>
-<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="linenum"><a class="header" href="#linenum">linenum</a></h1>
-<p>Tool for enumerating Windows and Samba information from remote systems.
-It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com.
-More information: <a href="https://labs.portcullis.co.uk/tools/enum4linux/">https://labs.portcullis.co.uk/tools/enum4linux/</a>.</p>
-<p>Try to enumerate using all methods:</p>
-<pre><code>  enum4linux -a remote_host
-</code></pre>
-<p>Enumerate using given login credentials:</p>
-<pre><code>  enum4linux -u user_name -p password remote_host
-</code></pre>
-<p>List usernames from a given host:</p>
-<pre><code>  enum4linux -U remote_host
-</code></pre>
-<p>List shares:</p>
-<pre><code>  enum4linux -S remote_host
-</code></pre>
-<p>Get OS information:</p>
-<pre><code>  enum4linux -o remote_host
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="gobuster"><a class="header" href="#gobuster">gobuster</a></h1>
-<p>Brute-forces hidden paths on web servers and more.
-More information: <a href="https://github.com/OJ/gobuster">https://github.com/OJ/gobuster</a>.</p>
-<p>Discover directories and files that match in the wordlist:</p>
-<pre><code>  gobuster dir --url https://example.com/ --wordlist path/to/file
-</code></pre>
-<p>Discover subdomains:</p>
-<pre><code>  gobuster dns --domain example.com --wordlist path/to/file
-</code></pre>
-<p>Discover Amazon S3 buckets:</p>
-<pre><code>  gobuster s3 --wordlist path/to/file
-</code></pre>
-<p>Discover other virtual hosts on the server:</p>
-<pre><code>  gobuster vhost --url https://example.com/ --wordlist path/to/file
-</code></pre>
-<p>Fuzz the value of a parameter:</p>
-<pre><code>  gobuster fuzz --url https://example.com/?parameter=FUZZ --wordlist path/to/file
-</code></pre>
-<p>Fuzz the name of a parameter:</p>
-<pre><code>  gobuster fuzz --url https://example.com/?FUZZ=value --wordlist path/to/file
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="smbclient"><a class="header" href="#smbclient">smbclient</a></h1>
-<p>FTP-like client to access SMB/CIFS resources on servers.</p>
-<p>Connect to a share (user will be prompted for password; <code>exit</code> to quit the session):</p>
-<pre><code>  smbclient //server/share
-</code></pre>
-<p>Connect with a different username:</p>
-<pre><code>  smbclient //server/share --user username
-</code></pre>
-<p>Connect with a different workgroup:</p>
-<pre><code>  smbclient //server/share --workgroup domain --user username
-</code></pre>
-<p>Connect with a username and password:</p>
-<pre><code>  smbclient //server/share --user username%password
-</code></pre>
-<p>Download a file from the server:</p>
-<pre><code>  smbclient //server/share --directory path/to/directory --command &quot;get file.txt&quot;
-</code></pre>
-<p>Upload a file to the server:</p>
-<pre><code>  smbclient //server/share --directory path/to/directory --command &quot;put file.txt&quot;
-</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-                        
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                            </nav>
+            </nav>
 
         </div>
 
-        
-        
-        
-                <script type="text/javascript">
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-        
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-                        <script type="text/javascript">
+        <script type="text/javascript">
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
-                
     </body>
 </html>
