@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="enum4linux.html"><strong aria-hidden="true">3.</strong> enum4linux</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -200,6 +200,25 @@ More information: <a href="https://github.com/vanhauser-thc/thc-hydra">https://g
 </code></pre>
 <p>Guess POP3 credentials on a list of hosts using usernames and passwords lists, exiting when a username/password pair is found:</p>
 <pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linenum"><a class="header" href="#linenum">linenum</a></h1>
+<p>Tool for enumerating Windows and Samba information from remote systems.
+It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com.
+More information: <a href="https://labs.portcullis.co.uk/tools/enum4linux/">https://labs.portcullis.co.uk/tools/enum4linux/</a>.</p>
+<p>Try to enumerate using all methods:</p>
+<pre><code>  enum4linux -a remote_host
+</code></pre>
+<p>Enumerate using given login credentials:</p>
+<pre><code>  enum4linux -u user_name -p password remote_host
+</code></pre>
+<p>List usernames from a given host:</p>
+<pre><code>  enum4linux -U remote_host
+</code></pre>
+<p>List shares:</p>
+<pre><code>  enum4linux -S remote_host
+</code></pre>
+<p>Get OS information:</p>
+<pre><code>  enum4linux -o remote_host
+</code></pre>
 
                     </main>
 

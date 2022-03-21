@@ -3,9 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
-                        <base href="/">
-        
+        <title>enum4linux</title>
+                
 
         <!-- Custom HTML head -->
         
@@ -83,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="enum4linux.html"><strong aria-hidden="true">3.</strong> enum4linux</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="enum4linux.html" class="active"><strong aria-hidden="true">3.</strong> enum4linux</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -144,13 +143,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="linenum"><a class="header" href="#linenum">linenum</a></h1>
+<p>Tool for enumerating Windows and Samba information from remote systems.
+It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com.
+More information: <a href="https://labs.portcullis.co.uk/tools/enum4linux/">https://labs.portcullis.co.uk/tools/enum4linux/</a>.</p>
+<p>Try to enumerate using all methods:</p>
+<pre><code>  enum4linux -a remote_host
+</code></pre>
+<p>Enumerate using given login credentials:</p>
+<pre><code>  enum4linux -u user_name -p password remote_host
+</code></pre>
+<p>List usernames from a given host:</p>
+<pre><code>  enum4linux -U remote_host
+</code></pre>
+<p>List shares:</p>
+<pre><code>  enum4linux -S remote_host
+</code></pre>
+<p>Get OS information:</p>
+<pre><code>  enum4linux -o remote_host
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="hydra.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         
                         
                         <div style="clear: both"></div>
@@ -159,6 +178,9 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="hydra.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
                             </nav>
 
