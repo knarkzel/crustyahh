@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Cracking</li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -144,7 +144,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <div style="break-before: page; page-break-before: always;"></div><h1 id="nmap"><a class="header" href="#nmap">nmap</a></h1>
+                        <h1 id="cracking"><a class="header" href="#cracking">Cracking</a></h1>
+<p>Here are some tools for cracking.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nmap"><a class="header" href="#nmap">nmap</a></h1>
 <p>Network exploration tool and security / port scanner.
 Some features only activate when Nmap is run with privileges.
 More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
@@ -170,8 +172,7 @@ More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
 <pre><code>  nmap -sSU address_or_addresses
 </code></pre>
 <p>Perform full port, service, version detection scan with all default NSE scripts active against a host to determine weaknesses and info:</p>
-<pre><code>  nmap -sC -sV address_or_addresses
-</code></pre>
+<pre><code>  nmap -sC -sV address_or_addresses</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hydra"><a class="header" href="#hydra">hydra</a></h1>
 <p>Online password guessing tool.
 Protocols supported include FTP, HTTP(S), SMTP, SNMP, XMPP, SSH, and more.
@@ -198,8 +199,7 @@ More information: <a href="https://github.com/vanhauser-thc/thc-hydra">https://g
 <pre><code>  hydra -C path/to/username_password_pairs.txt imap://[host_range_cidr]
 </code></pre>
 <p>Guess POP3 credentials on a list of hosts using usernames and passwords lists, exiting when a username/password pair is found:</p>
-<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3
-</code></pre>
+<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3</code></pre>
 
                     </main>
 

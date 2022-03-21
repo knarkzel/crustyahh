@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>hydra</title>
+        <title>Cracking</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="cracking.html">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html" class="active"><strong aria-hidden="true">2.</strong> hydra</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="cracking.html" class="active">Cracking</a></li><li class="chapter-item expanded "><a href="nmap.html"><strong aria-hidden="true">1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="hydra.html"><strong aria-hidden="true">2.</strong> hydra</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -143,42 +143,17 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="hydra"><a class="header" href="#hydra">hydra</a></h1>
-<p>Online password guessing tool.
-Protocols supported include FTP, HTTP(S), SMTP, SNMP, XMPP, SSH, and more.
-More information: <a href="https://github.com/vanhauser-thc/thc-hydra">https://github.com/vanhauser-thc/thc-hydra</a>.</p>
-<p>Start Hydra's wizard:</p>
-<pre><code>  hydra-wizard
-</code></pre>
-<p>Guess SSH credentials using a given username and a list of passwords:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt host_ip ssh
-</code></pre>
-<p>Guess Telnet credentials using a list of usernames and a single password, specifying a non-standard port and IPv6:</p>
-<pre><code>  hydra -L path/to/usernames.txt -p password -s port -6 host_ip telnet
-</code></pre>
-<p>Guess FTP credentials using usernames and passwords lists, specifying the number of threads:</p>
-<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -t n_tasks host_ip ftp
-</code></pre>
-<p>Guess MySQL credentials using a username and a passwords list, exiting when a username/password pair is found:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt -f host_ip mysql
-</code></pre>
-<p>Guess RDP credentials using a username and a passwords list, showing each attempt:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt -V rdp://host_ip
-</code></pre>
-<p>Guess IMAP credentials on a range of hosts using a list of colon-separated username/password pairs:</p>
-<pre><code>  hydra -C path/to/username_password_pairs.txt imap://[host_range_cidr]
-</code></pre>
-<p>Guess POP3 credentials on a list of hosts using usernames and passwords lists, exiting when a username/password pair is found:</p>
-<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3</code></pre>
+                        <h1 id="cracking"><a class="header" href="#cracking">Cracking</a></h1>
+<p>Here are some tools for cracking.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="nmap.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
                         
+                                                    <a rel="next" href="nmap.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -186,10 +161,10 @@ More information: <a href="https://github.com/vanhauser-thc/thc-hydra">https://g
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="nmap.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
                 
+                                    <a rel="next" href="nmap.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                             </nav>
 
         </div>
