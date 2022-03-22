@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="crustyahh.html">crustyahh</a></li><li class="chapter-item expanded affix "><a href="resources.html">Resources</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="guides/php-reverse-shell.html"><strong aria-hidden="true">1.</strong> php-reverse-shell</a></li><li class="chapter-item expanded "><a href="guides/linenum.html"><strong aria-hidden="true">2.</strong> LinEnum</a></li><li class="chapter-item expanded "><a href="guides/suid.html"><strong aria-hidden="true">3.</strong> SUID</a></li><li class="chapter-item expanded affix "><li class="part-title">Cracking</li><li class="chapter-item expanded "><a href="cracking/nmap.html"><strong aria-hidden="true">4.</strong> nmap</a></li><li class="chapter-item expanded "><a href="cracking/hydra.html"><strong aria-hidden="true">5.</strong> hydra</a></li><li class="chapter-item expanded "><a href="cracking/enum4linux.html"><strong aria-hidden="true">6.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="cracking/gobuster.html"><strong aria-hidden="true">7.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="cracking/smbclient.html"><strong aria-hidden="true">8.</strong> smbclient</a></li><li class="chapter-item expanded affix "><li class="part-title">dev</li><li class="chapter-item expanded "><a href="todo.html"><strong aria-hidden="true">9.</strong> note</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="crustyahh.html">crustyahh</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Guides</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="guides/php-reverse-shell.html"><strong aria-hidden="true">1.1.</strong> php-reverse-shell</a></li><li class="chapter-item expanded "><a href="guides/linenum.html"><strong aria-hidden="true">1.2.</strong> LinEnum</a></li><li class="chapter-item expanded "><a href="guides/suid.html"><strong aria-hidden="true">1.3.</strong> SUID</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools/nmap.html"><strong aria-hidden="true">2.1.</strong> nmap</a></li><li class="chapter-item expanded "><a href="tools/hydra.html"><strong aria-hidden="true">2.2.</strong> hydra</a></li><li class="chapter-item expanded "><a href="tools/enum4linux.html"><strong aria-hidden="true">2.3.</strong> enum4linux</a></li><li class="chapter-item expanded "><a href="tools/gobuster.html"><strong aria-hidden="true">2.4.</strong> gobuster</a></li><li class="chapter-item expanded "><a href="tools/smbclient.html"><strong aria-hidden="true">2.5.</strong> smbclient</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Other</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="resources.html"><strong aria-hidden="true">3.1.</strong> Resources</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,17 +138,6 @@
                         <h1 id="crustyahh"><a class="header" href="#crustyahh">crustyahh</a></h1>
 <p>We are <code>crustyahh</code>.</p>
 <p><img src="crab.jpg" alt="&quot;crustyahh&quot;" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
-<ul>
-<li><a href="https://gchq.github.io/CyberChef/">CyberChef</a></li>
-</ul>
-<h2 id="wordlists"><a class="header" href="#wordlists">Wordlists</a></h2>
-<p>SecLists:</p>
-<pre><code class="language-bash">git clone https://github.com/danielmiessler/SecLists
-</code></pre>
-<p>rockyou.txt:</p>
-<pre><code class="language-bash">curl -LO https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
-</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="php-reverse-shell"><a class="header" href="#php-reverse-shell">PHP reverse shell</a></h1>
 <p>First, download the script:</p>
 <pre><code>curl -LO https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
@@ -180,127 +169,141 @@ Find this with <a href="guides/linenum.html">LinEnum</a>.</p>
 <p>If it's <code>python</code>, run following to become root:</p>
 <pre><code>python -c 'import os; os.execl(&quot;/bin/sh&quot;, &quot;sh&quot;, &quot;-p&quot;)'</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nmap"><a class="header" href="#nmap">nmap</a></h1>
+<pre><code>paru -S nmap
+</code></pre>
 <p>Network exploration tool and security / port scanner.
 Some features only activate when Nmap is run with privileges.
 More information: <a href="https://nmap.org">https://nmap.org</a>.</p>
 <p>Check if an IP address is up, and guess the remote host's operating system:</p>
-<pre><code>  nmap -O ip_or_hostname
+<pre><code>nmap -O ip_or_hostname
 </code></pre>
 <p>Try to determine whether the specified hosts are up and what their names are:</p>
-<pre><code>  nmap -sn ip_or_hostname optional_another_address
+<pre><code>nmap -sn ip_or_hostname optional_another_address
 </code></pre>
 <p>Like above, but also run a default 1000-port TCP scan if host seems up:</p>
-<pre><code>  nmap ip_or_hostname optional_another_address
+<pre><code>nmap ip_or_hostname optional_another_address
 </code></pre>
 <p>Also enable scripts, service detection, OS fingerprinting and traceroute:</p>
-<pre><code>  nmap -A address_or_addresses
+<pre><code>nmap -A address_or_addresses
 </code></pre>
 <p>Assume good network connection and speed up execution:</p>
-<pre><code>  nmap -T4 address_or_addresses
+<pre><code>nmap -T4 address_or_addresses
 </code></pre>
 <p>Scan a specific list of ports (use <code>-p-</code> for all ports <code>1-65535</code>):</p>
-<pre><code>  nmap -p port1,port2,…,portN address_or_addresses
+<pre><code>nmap -p port1,port2,…,portN address_or_addresses
 </code></pre>
 <p>Perform TCP and UDP scanning (use <code>-sU</code> for UDP only, <code>-sZ</code> for SCTP, <code>-sO</code> for IP):</p>
-<pre><code>  nmap -sSU address_or_addresses
+<pre><code>nmap -sSU address_or_addresses
 </code></pre>
 <p>Perform full port, service, version detection scan with all default NSE scripts active against a host to determine weaknesses and info:</p>
-<pre><code>  nmap -sC -sV address_or_addresses</code></pre>
+<pre><code>nmap -sC -sV address_or_addresses</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hydra"><a class="header" href="#hydra">hydra</a></h1>
+<pre><code>paru -S hydra
+</code></pre>
 <p>Bruteforce tool
 Online password guessing tool.
 Protocols supported include FTP, HTTP(S), SMTP, SNMP, XMPP, SSH, and more.
 More information: <a href="https://github.com/vanhauser-thc/thc-hydra">https://github.com/vanhauser-thc/thc-hydra</a>.</p>
 <p>Start Hydra's wizard:</p>
-<pre><code>  hydra-wizard
+<pre><code>hydra-wizard
 </code></pre>
 <p>Guess SSH credentials using a given username and a list of passwords:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt host_ip ssh
+<pre><code>hydra -l username -P path/to/wordlist.txt host_ip ssh
 </code></pre>
 <p>Guess Telnet credentials using a list of usernames and a single password, specifying a non-standard port and IPv6:</p>
-<pre><code>  hydra -L path/to/usernames.txt -p password -s port -6 host_ip telnet
+<pre><code>hydra -L path/to/usernames.txt -p password -s port -6 host_ip telnet
 </code></pre>
 <p>Guess FTP credentials using usernames and passwords lists, specifying the number of threads:</p>
-<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -t n_tasks host_ip ftp
+<pre><code>hydra -L path/to/usernames.txt -P path/to/wordlist.txt -t n_tasks host_ip ftp
 </code></pre>
 <p>Guess MySQL credentials using a username and a passwords list, exiting when a username/password pair is found:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt -f host_ip mysql
+<pre><code>hydra -l username -P path/to/wordlist.txt -f host_ip mysql
 </code></pre>
 <p>Guess RDP credentials using a username and a passwords list, showing each attempt:</p>
-<pre><code>  hydra -l username -P path/to/wordlist.txt -V rdp://host_ip
+<pre><code>hydra -l username -P path/to/wordlist.txt -V rdp://host_ip
 </code></pre>
 <p>Guess IMAP credentials on a range of hosts using a list of colon-separated username/password pairs:</p>
-<pre><code>  hydra -C path/to/username_password_pairs.txt imap://[host_range_cidr]
+<pre><code>hydra -C path/to/username_password_pairs.txt imap://[host_range_cidr]
 </code></pre>
 <p>Guess POP3 credentials on a list of hosts using usernames and passwords lists, exiting when a username/password pair is found:</p>
-<pre><code>  hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="linenum-1"><a class="header" href="#linenum-1">linenum</a></h1>
+<pre><code>hydra -L path/to/usernames.txt -P path/to/wordlist.txt -M path/to/hosts.txt -F pop3</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enum4linux"><a class="header" href="#enum4linux">enum4linux</a></h1>
+<pre><code>paru -S enum4linux
+</code></pre>
 <p>Tool for enumerating Windows and Samba information from remote systems.
 It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com.
 More information: <a href="https://labs.portcullis.co.uk/tools/enum4linux/">https://labs.portcullis.co.uk/tools/enum4linux/</a>.</p>
 <p>Try to enumerate using all methods:</p>
-<pre><code>  enum4linux -a remote_host
+<pre><code>enum4linux -a remote_host
 </code></pre>
 <p>Enumerate using given login credentials:</p>
-<pre><code>  enum4linux -u user_name -p password remote_host
+<pre><code>enum4linux -u user_name -p password remote_host
 </code></pre>
 <p>List usernames from a given host:</p>
-<pre><code>  enum4linux -U remote_host
+<pre><code>enum4linux -U remote_host
 </code></pre>
 <p>List shares:</p>
-<pre><code>  enum4linux -S remote_host
+<pre><code>enum4linux -S remote_host
 </code></pre>
 <p>Get OS information:</p>
-<pre><code>  enum4linux -o remote_host
+<pre><code>enum4linux -o remote_host
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gobuster"><a class="header" href="#gobuster">gobuster</a></h1>
+<pre><code>paru -S gobuster
+</code></pre>
 <p>Brute-forces hidden paths on web servers and more.
 More information: <a href="https://github.com/OJ/gobuster">https://github.com/OJ/gobuster</a>.</p>
 <p>Discover directories and files that match in the wordlist:</p>
-<pre><code>  gobuster dir --url https://example.com/ --wordlist path/to/file
+<pre><code>gobuster dir --url https://example.com/ --wordlist path/to/file
 </code></pre>
 <p>Discover subdomains:</p>
-<pre><code>  gobuster dns --domain example.com --wordlist path/to/file
+<pre><code>gobuster dns --domain example.com --wordlist path/to/file
 </code></pre>
 <p>Discover Amazon S3 buckets:</p>
-<pre><code>  gobuster s3 --wordlist path/to/file
+<pre><code>gobuster s3 --wordlist path/to/file
 </code></pre>
 <p>Discover other virtual hosts on the server:</p>
-<pre><code>  gobuster vhost --url https://example.com/ --wordlist path/to/file
+<pre><code>gobuster vhost --url https://example.com/ --wordlist path/to/file
 </code></pre>
 <p>Fuzz the value of a parameter:</p>
-<pre><code>  gobuster fuzz --url https://example.com/?parameter=FUZZ --wordlist path/to/file
+<pre><code>gobuster fuzz --url https://example.com/?parameter=FUZZ --wordlist path/to/file
 </code></pre>
 <p>Fuzz the name of a parameter:</p>
-<pre><code>  gobuster fuzz --url https://example.com/?FUZZ=value --wordlist path/to/file
+<pre><code>gobuster fuzz --url https://example.com/?FUZZ=value --wordlist path/to/file
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="smbclient"><a class="header" href="#smbclient">smbclient</a></h1>
+<pre><code>paru -S smbclient
+</code></pre>
 <p>FTP-like client to access SMB/CIFS resources on servers.</p>
 <p>Connect to a share (user will be prompted for password; <code>exit</code> to quit the session):</p>
-<pre><code>  smbclient //server/share
+<pre><code>smbclient //server/share
 </code></pre>
 <p>Connect with a different username:</p>
-<pre><code>  smbclient //server/share --user username
+<pre><code>smbclient //server/share --user username
 </code></pre>
 <p>Connect with a different workgroup:</p>
-<pre><code>  smbclient //server/share --workgroup domain --user username
+<pre><code>smbclient //server/share --workgroup domain --user username
 </code></pre>
 <p>Connect with a username and password:</p>
-<pre><code>  smbclient //server/share --user username%password
+<pre><code>smbclient //server/share --user username%password
 </code></pre>
 <p>Download a file from the server:</p>
-<pre><code>  smbclient //server/share --directory path/to/directory --command &quot;get file.txt&quot;
+<pre><code>smbclient //server/share --directory path/to/directory --command &quot;get file.txt&quot;
 </code></pre>
 <p>Upload a file to the server:</p>
-<pre><code>  smbclient //server/share --directory path/to/directory --command &quot;put file.txt&quot;
+<pre><code>smbclient //server/share --directory path/to/directory --command &quot;put file.txt&quot;
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="wtite"><a class="header" href="#wtite">wtite</a></h1>
-<p>getops
-sudo -l</p>
-<p>chmod 4555 /bin/bash -&gt; suid on file
-exit
-bash -p</p>
-<p>nikto</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
+<ul>
+<li><a href="https://gchq.github.io/CyberChef/">CyberChef</a></li>
+</ul>
+<h2 id="wordlists"><a class="header" href="#wordlists">Wordlists</a></h2>
+<p>SecLists:</p>
+<pre><code class="language-bash">git clone https://github.com/danielmiessler/SecLists
+</code></pre>
+<p>rockyou.txt:</p>
+<pre><code class="language-bash">curl -LO https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+</code></pre>
 
                     </main>
 
