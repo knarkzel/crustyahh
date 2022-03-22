@@ -1,4 +1,6 @@
-# linenum
+# enum4linux
+
+    paru -S enum4linux
 
   Tool for enumerating Windows and Samba information from remote systems.
   It attempts to offer similar functionality to enum.exe formerly available from www.bindview.com.
@@ -6,21 +8,21 @@
 
   Try to enumerate using all methods:
 
-      enum4linux -a remote_host
+    enum4linux -a remote_host
 
   Enumerate using given login credentials:
 
-      enum4linux -u user_name -p password remote_host
+    enum4linux -u user_name -p password remote_host
 
   List usernames from a given host:
 
-      enum4linux -U remote_host
+    enum4linux -U remote_host
 
   List shares:
 
-      enum4linux -S remote_host
+    enum4linux -S remote_host
 
   Get OS information:
 
-      enum4linux -o remote_host
+    enum4linux -o remote_host
 
