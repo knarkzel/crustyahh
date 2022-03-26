@@ -19,5 +19,10 @@ Finally, upload the script to the server, and open the newly created link.
 To upgrade the dumb shell:
 
     python -c 'import pty; pty.spawn("/bin/bash")'
+    # Ctrl-Z
+    stty raw -echo
+    fg
+    reset
+    # Set terminal to vt100
 
 For even more, see [Upgrading Simple Shells to Fully Interactive TTYs](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
