@@ -24,5 +24,3 @@ To upgrade the dumb shell:
     fg
     reset
     # Set terminal to vt100
-
-For even more, see [Upgrading Simple Shells to Fully Interactive TTYs](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
