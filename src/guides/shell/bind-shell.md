@@ -12,4 +12,4 @@ On host:
 nc <IP> <PORT>
 ```
 
-See [reverse-shell](reverse-shell.md) for upgrading.
+See [upgrade-dumb-shell](upgrade-dumb-shell.md) for upgrading.

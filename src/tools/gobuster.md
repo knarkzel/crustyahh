@@ -1,31 +1,26 @@
 # gobuster
 
-    paru -S gobuster
+```bash
+paru -S gobuster
+```
 
-  Brute-forces hidden paths on web servers and more.
-  More information: <https://github.com/OJ/gobuster>.
+Brute-forces hidden paths on web servers and more.
+More information: <https://github.com/OJ/gobuster>.
 
-  Discover directories and files that match in the wordlist:
+Discover directories and files that match in the wordlist:
 
-    gobuster dir --url https://example.com/ --wordlist path/to/file
+```bash
+gobuster dir --url <URL> --wordlist <WORDLIST>
+```
 
-  Discover subdomains:
+Discover subdomains:
 
-    gobuster dns --domain example.com --wordlist path/to/file
+```bash
+gobuster dns --domain <URL> --wordlist <WORDLIST>
+```
 
-  Discover Amazon S3 buckets:
+Fuzz the value of a parameter:
 
-    gobuster s3 --wordlist path/to/file
-
-  Discover other virtual hosts on the server:
-
-    gobuster vhost --url https://example.com/ --wordlist path/to/file
-
-  Fuzz the value of a parameter:
-
-    gobuster fuzz --url https://example.com/?parameter=FUZZ --wordlist path/to/file
-
-  Fuzz the name of a parameter:
-
-    gobuster fuzz --url https://example.com/?FUZZ=value --wordlist path/to/file
-
+```bash
+gobuster fuzz --url <URL>/?parameter=FUZZ --wordlist <WORDLIST>
+```

