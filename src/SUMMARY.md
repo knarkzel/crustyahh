@@ -3,7 +3,11 @@
 [crustyahh](crustyahh.md)
 
 - [Guides]()
-  - [reverse-shell](guides/reverse-shell.md)
+  - [Shell]()
+    - [Reverse shell](guides/shell/reverse-shell.md)
+    - [Bind shell](guides/shell/bind-shell.md)
+    - [Upgrade dumb shell](guides/shell/upgrade-dumb-shell.md)
+    - [PHP reverse shell](guides/shell/php-reverse-shell.md)
   - [LinEnum](guides/linenum.md)
   - [linpeas](guides/linpeas.md)
   - [SUID](guides/suid.md)
