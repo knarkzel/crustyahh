@@ -1,6 +1,8 @@
 # Resources
 
 - [CyberChef](https://gchq.github.io/CyberChef/)
+- [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
+- [CrackStation](https://crackstation.net/)
 
 ## Wordlists
 
