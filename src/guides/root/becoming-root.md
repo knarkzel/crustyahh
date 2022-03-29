@@ -8,6 +8,14 @@ Find this with any of these scripts:
 - [linpeas](https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh)
 - [linux-exploit-suggester](https://raw.githubusercontent.com/knarkzel/linux-exploit-suggester/master/linux-exploit-suggester.sh)
 
+## Useful one liners
+
+```bash
+chmod u+s <FILE> # set SUID-bit
+find / -type f -perm -04000 -ls 2>/dev/null # find SUID binaries
+openssl passwd -1 -salt THM <PASSWORD> # hash password for /etc/passwd exploit
+```
+
 ## Python binary
 
 If you found a `python` binary with SUID, run following to become root:

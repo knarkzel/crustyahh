@@ -5,6 +5,7 @@
 - [CrackStation](https://crackstation.net/)
 - [Exploit Database](https://exploit-db.com/)
 - [GTFOBins](https://gtfobins.github.io/)
+- [HackTricks](https://book.hacktricks.xyz/)
 
 SecLists:
 
