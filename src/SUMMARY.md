@@ -8,7 +8,8 @@
     - [Reverse shell](guides/shell/reverse-shell.md)
     - [PHP reverse shell](guides/shell/php-reverse-shell.md)
     - [Upgrade dumb shell](guides/shell/upgrade-dumb-shell.md)
-  - [Becoming root](guides/becoming-root.md)
+  - [Root]()
+    - [Becoming root](guides/root/becoming-root.md)
 
 - [Tools]()
   - [nmap](tools/nmap.md)
