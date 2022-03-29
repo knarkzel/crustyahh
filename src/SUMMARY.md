@@ -8,9 +8,7 @@
     - [Reverse shell](guides/shell/reverse-shell.md)
     - [PHP reverse shell](guides/shell/php-reverse-shell.md)
     - [Upgrade dumb shell](guides/shell/upgrade-dumb-shell.md)
-  - [LinEnum](guides/linenum.md)
-  - [linpeas](guides/linpeas.md)
-  - [SUID](guides/suid.md)
+  - [Becoming root](guides/becoming-root.md)
 
 - [Tools]()
   - [nmap](tools/nmap.md)
