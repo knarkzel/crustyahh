@@ -17,6 +17,7 @@
   - [enum4linux](tools/enum4linux.md)
   - [gobuster](tools/gobuster.md)
   - [smbclient](tools/smbclient.md)
+  - [searchsploit](tools/searchsploit.md)
 
 - [Other]()
   - [Resources](resources.md)
