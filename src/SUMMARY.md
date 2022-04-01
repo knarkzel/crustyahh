@@ -10,6 +10,8 @@
     - [Upgrade dumb shell](guides/shell/upgrade-dumb-shell.md)
   - [Root]()
     - [Becoming root](guides/root/becoming-root.md)
+  - [Web]()
+    - [sqlmap](guides/web/sqlmap.md)
 
 - [Tools]()
   - [nmap](tools/nmap.md)
